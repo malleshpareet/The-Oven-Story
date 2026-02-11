@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-outfit);
+  --color-pizza-gold: #FFC107;
+  --color-pizza-red: #D32F2F;
+  --color-pizza-dark: #0A0A0A;
+}
+
+:root {
+  --bg-gradient: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+}
+
+body {
+  background: var(--bg-gradient);
+  color: white;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::selection {
+  background: #f97316;
+  color: white;
+}
+
+.slanted-cta {
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+}
