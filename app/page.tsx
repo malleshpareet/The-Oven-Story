@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Footer from '@/components/Footer';
 
 export default function Home() {
+  // Triggering new build...
   const [index, setIndex] = useState(0);
   const current = products[index];
 
