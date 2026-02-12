@@ -62,6 +62,62 @@ export default function MenuPage() {
                     </div>
                 </motion.div>
 
+                {/* Service Icons Section */}
+                <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-24 border-y border-white/5 py-12">
+                    {[
+                        {
+                            name: "Dine-In",
+                            desc: "Premium Ambient Seating",
+                            icon: (
+                                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+                                    <path d="M7 2v20" />
+                                    <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
+                                </svg>
+                            )
+                        },
+                        {
+                            name: "Delivery",
+                            desc: "Fast & Fresh to your Door",
+                            icon: (
+                                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                    <circle cx="6" cy="19" r="2" /><circle cx="18" cy="19" r="2" />
+                                    <path d="M10 19h4" /><path d="M15 19H3" /><path d="M8 19V5c0-1.1.9-2 2-2h4l2 3" />
+                                </svg>
+                            )
+                        },
+                        {
+                            name: "Takeaway",
+                            desc: "Click & Collect in 15m",
+                            icon: (
+                                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                                    <path d="M3 6h18" /><path d="M16 10a4 4 0 0 1-8 0" />
+                                </svg>
+                            )
+                        }
+                    ].map((service, i) => (
+                        <motion.div
+                            key={service.name}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 + i * 0.1 }}
+                            viewport={{ once: true }}
+                            className="flex flex-col items-center group cursor-default"
+                        >
+                            <div className="w-16 h-16 rounded-2xl bg-neutral-900 border border-white/5 flex items-center justify-center mb-4 text-white/40 group-hover:text-orange-600 group-hover:border-orange-600/50 group-hover:bg-orange-600/5 transition-all duration-500">
+                                {service.icon}
+                            </div>
+                            <span className="text-xs font-black uppercase tracking-[0.3em] mb-1 group-hover:text-white transition-colors">
+                                {service.name}
+                            </span>
+                            <span className="text-[10px] font-bold uppercase tracking-widest text-white/20">
+                                {service.desc}
+                            </span>
+                        </motion.div>
+                    ))}
+                </div>
+
                 {menuCategories.map((category, catIdx) => (
                     <div key={category.title} className="mb-32">
                         <div className="mb-12">
